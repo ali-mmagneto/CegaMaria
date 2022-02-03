@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 
 @Client.on_message(filters.command("start"))
 async def start(client, message):
-  #if (message.from_user.id < 5000000000) == True:
+    if (message.from_user.id < 5000000000) == True:
     if AUTH_CHANNEL:
         try:
             user = await client.get_chat_member(AUTH_CHANNEL, message.chat.id)
