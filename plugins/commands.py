@@ -71,7 +71,7 @@ async def start(client, message):
     if AUTH_CHANNEL and not await is_subscribed(client, message):
         try:
             date = message.date + 120
-            invite_link = await client.create_chat_invite_link(int(AUTH_CHANNEL), expire_date=date, member_limit = 1, creates_join_request=True)
+            invite_link = await client.create_chat_invite_link(int(AUTH_CHANNEL), expire_date=date, member_limit = 1)
         except ChatAdminRequired:
             logger.error("Bot'un Forcesub kanalında yönetici olduğundan emin olun")
             return
